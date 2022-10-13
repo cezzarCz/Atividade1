@@ -1,0 +1,30 @@
+package com.mycompany.atividade1.p.o;
+import java.util.Scanner;
+
+public class Atividade1PO {
+
+    public static void main(String[] args) {
+        int horas;
+        int horasExtra;
+        double salario;
+        double valorHora;
+        double salarioTotal;
+        double valorExtra;
+        double salarioExtra;
+        System.out.println("Informe a quantidade de horas trabalhadas: ");
+        Scanner receber = new Scanner(System.in);
+        horas = receber.nextInt();
+        System.out.println("Informe o salario por hora: ");
+        valorHora = receber.nextDouble();
+        if (horas <= 160){
+            salarioTotal = valorHora * horas; 
+        } else {
+            horasExtra = horas - 160;
+            valorExtra = valorHora + (valorHora * 0.5);
+            salarioExtra = valorExtra * horasExtra;
+            salario = 160 * valorHora;
+            salarioTotal = salario + salarioExtra;
+        }
+        System.out.println("Salario final: " + salarioTotal);
+    }
+}
